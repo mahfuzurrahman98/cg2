@@ -7,12 +7,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from os import environ
 # import logging
 
-# from database import Base, engine
-# from routers import snippets, users, data
+from database import Base, engine
+from routers import snippets, users, data
 
 # load_dotenv()
 app = FastAPI()
-# Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)
 
 
 app.add_middleware(
@@ -47,6 +47,6 @@ async def root():
     # logging.info(f"DB_HOST: {db_host}")
     return {"message": "DB_HOST"}
 
-# app.include_router(snippets.router, prefix="/api/v1")
-# app.include_router(users.router, prefix="/api/v1")
-# app.include_router(data.router, prefix="/api/v1")
+app.include_router(snippets.router, prefix="/api/v1")
+app.include_router(users.router, prefix="/api/v1")
+app.include_router(data.router, prefix="/api/v1")
