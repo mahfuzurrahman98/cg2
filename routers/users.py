@@ -3,7 +3,7 @@ from os import environ
 from typing import Annotated
 
 import httpx
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.responses import JSONResponse, RedirectResponse
 from passlib.exc import UnknownHashError
@@ -21,7 +21,7 @@ from utils import Auth  # as Module
 from utils.Hash import Hash  # as Class
 from validators.userValidator import check_existing_user
 
-load_dotenv()
+# load_dotenv()
 router = APIRouter()
 
 

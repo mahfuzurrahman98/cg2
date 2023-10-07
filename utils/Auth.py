@@ -1,12 +1,12 @@
 from datetime import datetime, timedelta
 from os import environ
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from fastapi import HTTPException, status
 from jose import jwt
 from jose.exceptions import JWTError
 
-load_dotenv()
+# load_dotenv()
 
 
 def create_access_token(data: dict):
