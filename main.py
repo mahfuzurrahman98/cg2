@@ -4,11 +4,11 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from database import Base, engine
+# from database import Base, engine
 from routers import snippets, users, data
 
 app = FastAPI()
-Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
 
 app.add_middleware(
     CORSMiddleware,
@@ -40,6 +40,6 @@ async def validation_exception_handler(request, exc):
 async def root():
     return {"message": "Hello World"}
 
-app.include_router(snippets.router, prefix="/api/v1")
-app.include_router(users.router, prefix="/api/v1")
-app.include_router(data.router, prefix="/api/v1")
+# app.include_router(snippets.router, prefix="/api/v1")
+# app.include_router(users.router, prefix="/api/v1")
+# app.include_router(data.router, prefix="/api/v1")
