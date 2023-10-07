@@ -16,7 +16,7 @@ db_password = environ.get('DB_PASSWORD')
 db_connector = 'mysql+mysqlconnector' if db_connection == 'mysql' else 'postgresql'
 
 connection_string = f"{db_connector}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
-print(connection_string)
+# print(connection_string)
 
 engine = create_engine(connection_string, echo=False)
 
