@@ -3,14 +3,9 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-# from dotenv import load_dotenv
-# from os import environ
-# import logging
-
 from database import Base, engine
 from routers import snippets, users, data
 
-# load_dotenv()
 app = FastAPI()
 Base.metadata.create_all(engine)
 
@@ -43,8 +38,6 @@ async def validation_exception_handler(request, exc):
 
 @app.get("/")
 async def root():
-    # db_host = environ.get('DB_HOST')
-    # logging.info(f"DB_HOST: {db_host}")
     return {"message": "DB_HOST"}
 
 app.include_router(snippets.router, prefix="/api/v1")
