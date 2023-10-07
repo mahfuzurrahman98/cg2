@@ -40,6 +40,6 @@ async def validation_exception_handler(request, exc):
 async def root():
     return {"message": "DB_HOST"}
 
-app.include_router(snippets.router, prefix="/api/v1")
+# app.include_router(snippets.router, prefix="/api/v1")
 # app.include_router(users.router, prefix="/api/v1")
 app.include_router(data.router, prefix="/api/v1")
