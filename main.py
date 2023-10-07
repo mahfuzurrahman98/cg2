@@ -43,9 +43,9 @@ async def validation_exception_handler(request, exc):
 
 @app.get("/")
 async def root():
-    db_host = environ.get('DB_HOST')
-    logging.info(f"DB_HOST: {db_host}")
-    return {"message": "DB_HOST: " + str(db_host)}
+    # db_host = environ.get('DB_HOST')
+    # logging.info(f"DB_HOST: {db_host}")
+    return {"message": "DB_HOST"}
 
 app.include_router(snippets.router, prefix="/api/v1")
 app.include_router(users.router, prefix="/api/v1")
