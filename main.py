@@ -5,7 +5,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 # from dotenv import load_dotenv
 from os import environ
-import logging
+# import logging
 
 from database import Base, engine
 from routers import snippets, users, data
@@ -47,6 +47,6 @@ async def root():
     # logging.info(f"DB_HOST: {db_host}")
     return {"message": "DB_HOST"}
 
-app.include_router(snippets.router, prefix="/api/v1")
-app.include_router(users.router, prefix="/api/v1")
-app.include_router(data.router, prefix="/api/v1")
+# app.include_router(snippets.router, prefix="/api/v1")
+# app.include_router(users.router, prefix="/api/v1")
+# app.include_router(data.router, prefix="/api/v1")
