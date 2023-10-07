@@ -3,13 +3,13 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from database import Base, engine
+# from database import Base, engine
 # from routers import snippets, users, data
 
 from routers import data
 
 app = FastAPI()
-Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
 
 
 app.add_middleware(
