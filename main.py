@@ -8,7 +8,7 @@ from os import environ
 import logging
 
 from database import Base, engine
-from routers import snippets, users, data
+# from routers import snippets, users, data
 
 app = FastAPI()
 Base.metadata.create_all(engine)
@@ -47,6 +47,6 @@ async def root():
     logging.info(f"DB_HOST: {db_host}")
     return {"message": "DB_HOST: " + str(db_host)}
 
-app.include_router(snippets.router, prefix="/api/v1")
-app.include_router(users.router, prefix="/api/v1")
-app.include_router(data.router, prefix="/api/v1")
+# app.include_router(snippets.router, prefix="/api/v1")
+# app.include_router(users.router, prefix="/api/v1")
+# app.include_router(data.router, prefix="/api/v1")
