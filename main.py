@@ -3,7 +3,7 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-# from dotenv import load_dotenv
+
 from os import environ
 import logging
 
@@ -13,7 +13,6 @@ from routers import snippets, users, data
 app = FastAPI()
 Base.metadata.create_all(engine)
 
-# load_dotenv()
 
 app.add_middleware(
     CORSMiddleware,

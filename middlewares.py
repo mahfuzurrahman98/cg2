@@ -1,6 +1,5 @@
 from typing import Annotated
 
-# from dotenv import load_dotenv
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer
@@ -9,9 +8,6 @@ from jose import JWTError
 from database import db
 from models.User import User
 from utils import Auth
-import re
-
-# load_dotenv()
 
 
 async def get_current_user(request: Request):
